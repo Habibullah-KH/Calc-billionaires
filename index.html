@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Billionaire diary </title>
+
+<!--* google font link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<!--* fot awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!--! daisiUi -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<!--* css link -->
+<link rel="stylesheet" href="style.css">
+
+
+<!--*Responsive css link -->
+<link rel="stylesheet" href="responsive.css">
+
+<!--* tailwind cdn -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          },
+          fontFamily: {
+      'poppins': ['Poppins', 'sans-serif'],
+
+    }
+}
+}
+}
+</script>
+</head>
+
+<body class="font-poppins max-w-[1920px] m-auto">
+
+    <!--* parent container -->
+
+    <section class="parent md:grid lg:grid-cols-6 md:grid-cols-4">
+
+        <div class="option_section col-span-4 md:col-span-2 py-3">
+        <div class="titel flex flex-col justify-center items-center py-3">
+        <h1 class="text-3xl font-bold">Billionaire</h1>
+        <p>DIARY</p>
+   </div>
+
+<div class="button">
+    <h2>Add a user</h2>
+    <p>(Randomly)</p>
+</div>
+
+
+<div class="button">
+    <h2>Double Money</h2>
+</div>
+
+
+<div class="button">
+    <h2>Sort By Rank</h2>
+    <p>(Randomly)</p>
+</div>
+
+
+<div class="button">
+    <h2>Calculate Entire Wealth</h2>
+</div>
+
+
+<div class="button bg-transparent hover:border-none border-none">
+    <p><i class="fa-solid fa-chevron-down"></i></p>
+</div>
+
+
+
+<div class="button">
+    <h2>Show All Billionaires</h2>
+    <p>(Randomly)</p>
+</div>    
+
+<div class="button">
+    <h2>Richest by industry</h2>
+    <p>(Techonology)</p>
+</div>
+
+
+<div class="button">
+    <h2>Richest by industry</h2>
+    <p>(Texas)</p>
+</div>
+
+
+
+        </div>
+<!--! text option end -->
+
+<!--? search parent -->
+        <div class="container_section p-5 lg:col-span-4 md:col-span-2 flex flex-col ">
+<!-- search -->
+<label class="input input-bordered flex items-center gap-2 w-2/3">
+    <input type="text" class="grow" placeholder="Search" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      class="h-4 w-4 opacity-70">
+      <path
+        fill-rule="evenodd"
+        d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+        clip-rule="evenodd" />
+    </svg>
+  </label>
+
+  <!-- details -->
+
+  <h2 class="my-3 mt-[4rem] font-bold text-3xl">
+    Hello, User!
+  </h2>
+
+  <div class="overflow-x-auto py-10  border-b-2 ">
+    <table class="table">
+      <!-- head -->
+      <thead>
+        <tr class="bg-base-200">
+          <th class="font-bold text-xl">Person</th>
+          <th class="font-bold text-xl">Citisenship</th>
+          <th class="font-bold text-xl">industry</th>
+          <th class="font-bold text-xl">Rank</th>
+          <th class="font-bold text-xl">Wealth</th>
+        </tr>
+      </thead>
+
+
+        <tbody id="tbody_container" >
+
+  
+        </tbody>
+
+    </table>
+  </div>
+
+<div class="calculate flex justify-between p-5 font-bold text-3xl ">
+    <p>Total</p>
+    <p>
+        $<span>0</span>
+    </p>
+</div>
+
+        </div>
+
+    </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+<button id="modalBtn" hidden class="btn" onclick="mymodal.showModal()">open modal</button>
+<dialog id="mymodal" class="modal">
+  <div id="modalBox" class="modal-box">
+    
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button ><i class="fa-solid fa-square-xmark text-3xl hover:text-red-500"></i></button>
+      </form>
+    </div>
+  </div>
+</dialog>
+    <!--! parent container end -->
+
+<!-- js link -->
+        <script src="script/script.js"></script>
+    </body>
+</html>

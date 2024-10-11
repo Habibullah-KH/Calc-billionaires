@@ -1,0 +1,61 @@
+.option_section{
+    background-image: linear-gradient(to right, #F9F5E0,#F4BCCD,#F5CBD9,#CACFF9);
+    background-position: left;
+    background-size: 500%;
+    animation: clr-animation 5s infinite alternate;
+    margin: 1rem;
+    border-radius: 1.4rem;
+}
+
+@keyframes clr-animation{
+
+    0%{
+      background-position: left;
+    }
+  
+    100%{
+      background-position: right;
+    }
+  }
+
+
+/* button customize */
+
+
+.button{
+border: 2px solid rgba(255, 0, 0, 0.034);
+background-color: white;
+border-radius: 1.5rem;
+font-weight: 500;
+margin: 1rem;
+height: 5rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transition: ease-in-out 0.3s;
+
+}
+
+
+.button:hover{
+border: 2px solid rgb(49, 49, 49);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
