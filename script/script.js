@@ -1,6 +1,8 @@
 // univarsal billionaires data
 
 let fetchData = [];
+let totalWealth = 0;
+
 
 // load billionaires data
 
@@ -26,13 +28,14 @@ obj?.forEach((item, position) => {
             <td><a href="#" onclick="showDetail('${position}')">${item.person.name} <i class="fa-solid fa-eye"></i> </a></td>
             <td>${item.countryOfCitizenship}</td>
             <td>${item.industries[0]}</td>
-            // <td>${item.rank}</td>
+            <td>${item.rank}</td>
             <td>$${item.finalWorth}</td>
 
     `;
     tbodyContainer.appendChild(tbody);
+    
 
-});
+  });
 };
 
 
@@ -113,13 +116,31 @@ sortData()
 };
 
 
+
 // calculate wealth
+const calc = () => {
+  totalWealth = 0;
 
-const calc = () =>{
+  // Check if data is loaded
+  if (fetchData.length === 0) {
+    console.log('Data is not loaded yet.');
+    return;
+  }
 
-  // when click button selected effect
-    const allBtn = document.querySelectorAll('.button');
-    allBtn.forEach(button => button.classList.remove('border'));
+  fetchData.forEach((item) => {
+    totalWealth += item.finalWorth;
+  });
+
+  // Update the total amount in the DOM
+  document.getElementById('totalAmount').innerText = totalWealth.toLocaleString();
+  console.log(totalWealth);
+
+  // Highlight the button when clicked
+  const allBtn = document.querySelectorAll('.button');
+  allBtn.forEach((button) => button.classList.remove('border'));
   const calcMoney = document.getElementById('calcMoney');
   calcMoney.classList.add('border');
-}
+};
+
+
+
