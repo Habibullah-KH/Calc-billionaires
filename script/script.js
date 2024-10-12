@@ -26,10 +26,9 @@ obj?.forEach((item, position) => {
             <td><a href="#" onclick="showDetail('${position}')">${item.person.name} <i class="fa-solid fa-eye"></i> </a></td>
             <td>${item.countryOfCitizenship}</td>
             <td>${item.industries[0]}</td>
-            <td>${item.rank}</td>
+            // <td>${item.rank}</td>
             <td>$${item.finalWorth}</td>
-          
-          <!-- row end -->
+
     `;
     tbodyContainer.appendChild(tbody);
 
@@ -37,7 +36,7 @@ obj?.forEach((item, position) => {
 };
 
 
-// get billioner data
+// get billioner data modal
 const showDetail = (data) => {
   const billionerData = fetchData[data];
   document.getElementById('modalBtn').click();
@@ -64,4 +63,63 @@ const showDetail = (data) => {
 
 };
 
-// show billioneer data modal
+
+
+// sort by rank
+const sortDisord = () => {
+
+  const sortData = async() => {
+    const url = `https://forbes400.onrender.com/api/forbes400/`
+    const res = await fetch(url);
+    const data = await res.json();
+
+    sortEach(data);
+  };
+
+
+const sortEach = (info) => {
+  console.log(info);
+
+  const modalbox = document.getElementById('tbody_container');
+  modalbox.innerHTML ="";
+
+  info.forEach((item, index) => {
+    
+      const sortTr = document.createElement('tr');
+      sortTr.innerHTML=`
+                  <td><a href="#" onclick="showDetail('${index}')">${item.person.name} <i class="fa-solid fa-eye"></i> </a></td>
+                  <td>${item.countryOfCitizenship}</td>
+                  <td>${item.industries[0]}</td>
+                  <td>${item.rank}</td>
+                  <td>$${item.finalWorth}</td>
+      
+      `;
+      modalbox.appendChild(sortTr);
+
+
+  });
+};
+sortData()
+
+
+
+    // when click button selected effect
+  const allBtn = document.querySelectorAll('.button');
+  allBtn.forEach(button => button.classList.remove('border'));
+  const sortBtn = document.getElementById('sort');
+  sortBtn.classList.add('border');
+
+  
+};
+
+
+// calculate wealth
+
+const calc = () =>{
+
+  // when click button selected effect
+    const allBtn = document.querySelectorAll('.button');
+    allBtn.forEach(button => button.classList.remove('border'));
+  const calcMoney = document.getElementById('calcMoney');
+  calcMoney.classList.add('border');
+}

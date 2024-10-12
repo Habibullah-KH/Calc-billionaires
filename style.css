@@ -43,7 +43,11 @@ border: 2px solid rgb(49, 49, 49);
 
 }
 
+.border{
+  border: 2px solid rgb(49, 49, 49);
+  background-color: #cacff94f;
 
+}
 
 
 
